@@ -1,0 +1,15 @@
+.failure-text {
+  color: #ef4444;
+}
+
+.success-text {
+  color: #34d399;
+}
+
+.warning-text {
+  color: #fb923c;
+}
+
+.info-text {
+  color: #38bdf8;
+}
