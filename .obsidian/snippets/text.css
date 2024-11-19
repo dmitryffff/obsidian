@@ -1,15 +1,19 @@
 .failure-text {
-  color: #ef4444;
+    color: #ef4444;
 }
 
 .success-text {
-  color: #34d399;
+    color: #34d399;
 }
 
 .warning-text {
-  color: #fb923c;
+    color: #fb923c;
 }
 
 .info-text {
-  color: #38bdf8;
+    color: #38bdf8;
+}
+
+.example-text {
+    color: #9ca3af;
 }

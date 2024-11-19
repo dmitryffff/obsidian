@@ -1,1 +1,8 @@
-{}
+{
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "_assets",
+  "userIgnoreFilters": [
+    "_assets/",
+    "_templates/"
+  ]
+}

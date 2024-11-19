@@ -1,0 +1,6 @@
+{
+  "format": "DD-MM-YYYY",
+  "folder": "Ежедневник",
+  "template": "_templates/daily",
+  "autorun": true
+}
