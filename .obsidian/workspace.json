@@ -1,24 +1,24 @@
 {
   "main": {
-    "id": "f219dd93f4bebfbd",
+    "id": "6dcc834724dfd600",
     "type": "split",
     "children": [
       {
-        "id": "4fafaf7178279661",
+        "id": "f79ce094d46b37b6",
         "type": "tabs",
         "children": [
           {
-            "id": "750c0467b1a0791b",
+            "id": "28336cc3dba58e2e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Книги/Замыкания & объекты.md",
+                "file": "Книги/Go идиомы и паттерны проектирования.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Замыкания & объекты"
+              "title": "Go идиомы и паттерны проектирования"
             }
           }
         ]
@@ -27,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "e0099d13572166e4",
+    "id": "3c2b86184cb53478",
     "type": "split",
     "children": [
       {
-        "id": "0d09efc4f61d0940",
+        "id": "aaba5187d7a67cf9",
         "type": "tabs",
         "children": [
           {
-            "id": "e3f94164084f7d31",
+            "id": "ce3faa06ebe36c10",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -47,7 +47,7 @@
             }
           },
           {
-            "id": "82077b5a7e60c57f",
+            "id": "ad026bb8e0bb62ab",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -64,7 +64,7 @@
             }
           },
           {
-            "id": "05a6d8abe0b43efe",
+            "id": "00e567c69cf7e2ed",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -80,20 +80,20 @@
     "width": 200
   },
   "right": {
-    "id": "8bd53b06c34a7e0c",
+    "id": "7cc298321e5f5462",
     "type": "split",
     "children": [
       {
-        "id": "733870f16fa3d727",
+        "id": "2736fae85271c966",
         "type": "tabs",
         "children": [
           {
-            "id": "828275cbf2030c0a",
+            "id": "0afed8cddb74aba3",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Книги/Замыкания & объекты.md",
+                "file": "Книги/Go идиомы и паттерны проектирования.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,25 +103,24 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Замыкания & объекты"
+              "title": "Backlinks for Go идиомы и паттерны проектирования"
             }
           },
           {
-            "id": "e590a8fc6eac967f",
+            "id": "7b14c53bf53b2410",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Книги/Замыкания & объекты.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Замыкания & объекты"
+              "title": "Outgoing links"
             }
           },
           {
-            "id": "bb8087e9b8f766d1",
+            "id": "efd1e33193e86619",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -134,43 +133,30 @@
             }
           },
           {
-            "id": "098a8a0af8773dba",
+            "id": "92c42ff3bf9d3fca",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Книги/Замыкания & объекты.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Outline of Замыкания & объекты"
+              "title": "Outline"
             }
           },
           {
-            "id": "a5306c8dbac18217",
+            "id": "1dae47f1bd539a43",
             "type": "leaf",
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
-            }
-          },
-          {
-            "id": "f05a20acf8efe1e1",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
-              "state": {},
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 282.5,
+    "width": 300,
     "collapsed": true
   },
   "left-ribbon": {
@@ -180,53 +166,47 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "command-palette:Open command palette": false
     }
   },
-  "active": "750c0467b1a0791b",
+  "active": "28336cc3dba58e2e",
   "lastOpenFiles": [
-    "Книги/Создание микросервисов.md",
-    "Книги/Асинхронная обработка и оптимизация. Вы не знаете JS..md",
-    "Книги/Замыкания & объекты.md",
-    "Ежедневник/19-11-2024.md",
-    "Ежедневник/17-11-2024.md",
-    "_assets/Вложенные области видимости.png",
-    "Ежедневник/16-11-2024.md",
+    "Ежедневник/08-01-2025.md",
+    "Книги/Go идиомы и паттерны проектирования.md",
+    "Ежедневник/03-01-2025.md",
+    "Ежедневник/01-01-2025.md",
     "Книги/PostgreSQL. SQL + PLpgSQL.md",
-    "Ежедневник/12-11-2024.md",
+    "Ежедневник/31-12-2024.md",
+    "Книги/Создание микросервисов.md",
+    "Книги/Замыкания & объекты.md",
+    "Книги/Асинхронная обработка и оптимизация. Вы не знаете JS..md",
+    "Книги",
     "Индексы в PostgreSQL. Как понять, что создавать?.md",
-    "Ежедневник/07-10-2024.md",
-    "Ежедневник/27-09-2024.md",
-    "_templates/summary.md",
-    "_assets/b-tree дерево.png",
     "Ежедневник/Invalid date.md",
-    "_templates/book.md",
-    "Конспекты",
-    "Ежедневник/15-09-2024.md",
     "Ежедневник/30-08-2024.md",
+    "Ежедневник/27-09-2024.md",
     "Ежедневник/23-08-2024.md",
-    "Ежедневник/17-08-2024.md",
-    "_assets/full join.png",
-    "_assets/Pasted image 20240810165745.png",
-    "_assets/Pasted image 20240810165741.png",
-    "_assets/left join.png",
-    "_assets/inner join.png",
-    "_assets/inner join.png",
-    "_assets/right join.png",
-    "_assets/Схема inner join.png",
-    "Ежедневник/08-08-2024.md",
-    "Ежедневник/10-08-2024.md",
     "Ежедневник/20-07-2024.md",
+    "Ежедневник/19-11-2024.md",
     "Ежедневник/18-06-2024.md",
-    "Ежедневник/08-06-2024.md",
+    "Ежедневник/17-11-2024.md",
+    "Ежедневник/17-08-2024.md",
+    "Ежедневник/16-11-2024.md",
+    "Ежедневник/15-09-2024.md",
+    "Ежедневник/12-11-2024.md",
+    "Ежедневник/10-08-2024.md",
     "Ежедневник/09-06-2024.md",
-    "_templates/daily.md",
-    "_templates/test.md",
+    "Ежедневник/08-08-2024.md",
+    "Ежедневник/08-06-2024.md",
     "Ежедневник",
     "_templates",
-    "Untitled.canvas",
-    "_assets",
-    "Книги"
+    "_assets/Число с плавающей запятой.png",
+    "_assets/Вложенные области видимости.png",
+    "_assets/right join.png",
+    "_assets/left join.png",
+    "_assets/inner join.png",
+    "_assets/full join.png",
+    "_assets/b-tree дерево.png",
+    "_assets"
   ]
 }
