@@ -329,4 +329,215 @@ var f = len(e) // 3 – длина символа ☼
 var g = len(a) // 9, а не 7, т.к. длина символа ☼ равна 3
 ```
 22. Для извлечения из строк подстрок или кодовых точек нужно использова встроенную библиотеку `strings` или `unicode/utf8`
-23. 
+23. Карты `map` – соединяет ключи и значения `map[тип_ключа]тип_значения`:
+    *нулевое значение `nil`; карты в go реализованы при помощи [хэш-таблиц](https://ru.wikipedia.org/wiki/%D0%A5%D0%B5%D1%88-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0)*
+```go
+var a map[string]int // nil
+var b map[string]string // nil
+fmt.Println(len(a)) // 0
+
+// ❗можно читать значения у нулевого map – всегда будет возвращать нулевой тип значения❗
+fmt.Println(a["a_key_1"]) // 0 – нулевое значение типа int
+fmt.Println(b["b_key_1"]) // "" – нулевое значение типа string
+
+// ❗нельзя записывать значения в nil-карту❗
+a["a_key_1"] = 1 // panic: assignment to entry in nil map
+
+var c = map[string]int{} // map[string]int{} – пустой 
+fmt.Println(len(c)) // 0
+
+// ❗можно читать значения у пустого литерала карты – всегда будет возвращать нулевой тип значения❗
+fmt.Println(с["с_key_1"]) // 0
+
+// ❗можно записывать значения в пустой литерал карты❗
+с["с_key_1"] = 1
+fmt.Println(с["с_key_1"]) // 1
+
+var d = make(map[string]int, 2) // пустой литерал карты длиной 2
+d["d_key_1"] = 1
+d["d_key_2"] = 2
+// можно добавлять значения сверх длины карты – она увеличится автоматически
+d["d_key_3"] = 3
+d["d_key_3"]++
+fmt.Println(d["d_key_3"]) // 4
+
+var e = map[string][]string{
+	"key1": []string{"a", "b", "c"},
+	"key2": []string{"d", "e", "f"},
+	"key3": []string{"j", "h", "k"},
+}
+e["key1"] // nil
+```
+24. Идиома "запятая-ok" – позволяет определить, была пара ключ-значение задана или же нам вернулось нулевое значение типа значения:
+```go
+var a = map[string]int{
+	"key_1": 1,
+	"key_2": 2,
+}
+v, ok := a["key_1"] // "key_1" содержится в карте "a", поэтому v == 1, "ok" == true, 
+v, ok := a["key_3"] // "key_3" НЕ содержится в карте "a", поэтому v == 0, "ok" == false
+```
+25. `delete: func delete(m map[Type]Type1, key Type)` – встроенная функция, позволяющая удалить пару ключ-значение из карты по ключу:
+```go
+var a = map[string]int{
+	"key_1": 1
+}
+delete(a, "key_1")
+```
+26. Карта в качестве множества `set` – позволяет хранить только уникальные значения:
+    *в go нет реализации `set` из коробки*
+```go
+// bool занимает 1 байт памяти
+var intSet = map[int]bool{}
+var vals = []int{1, 1, 1, 2, 3, 4, 4, 5, 6, 6, 6}
+for _, v := range vals {
+	intSet[v] = true
+}
+fmt.Println(intSet) // {1:true,2:true,3:true,4:true,5:true,6:true,} – только уникальные значения
+
+// можно использовать пустую структуру struct{} – занимает 0 байт => более эффективно, НО для проверки надо будет использовать идиому запятая-ok
+var intSet2 = map[int]struct{}{}
+var vals = []int{1, 1, 1, 2, 3, 4, 4, 5, 6, 6, 6}
+for _, v := range vals {
+	intSet2[v] = struct{}
+}
+fmt.Println(intSet2) // {1:struct{},2:struct{},3:struct{},4:struct{},5:struct{},6:struct{},} – только уникальные значения
+```
+27. ***Структуры*** – позволяет определить определенный вид данных с конкретными ключами и их значениями:
+	*НУЛЕВОЕ ЗНАЧЕНИЕ – СТРУКТУРА, ВСЕ ПОЛЯ КОТОРОЙ ИМЕЮ НУЛЕВЫЕ ЗНАЧЕНИЯ ТИПА ПОЛЯ*
+    *карты не позволяют задать определенные ключи, а так же позволяют использовать только один тип в качестве значения*
+```go
+// Можно определять структуры на уровне модуля
+type person struct {
+	name string
+	age int
+	pet string
+}
+
+var p person // person{ name: "", age: 0, pet: "" }
+
+// Можно внутри функции
+func foo() {
+	type fooPerson struct {
+		firstName string
+		lastName string
+	}
+
+	// Тип, объявленный в функции можно использовать только в ней(или ниже)
+	fp := fooPerson{} // fooPerson { firstName: "", lastName: "" }
+}
+
+// Можно создавать экземпляры структуру без указания названия полей, НО все ЗНАЧЕНИЯ полей должны быть В ТОМ ЖЕ ПОРЯДКЕ КАК БЫЛИ ОБЪЯВЛЕНЫ В ТИПЕ СТРУКТУРЫ
+var p1 = person {
+	"Dima",
+	24,
+	"cat",
+} // person{name:"Dima",age:24,pet:"cat",}
+
+// Можно создавать экземпляр с указанием имени полей, тогда можно указывать в произвольном порядке – предпочтительный вариант создания
+var p2 = person {
+	age 21,
+	pet "rat",
+	name "Kate",
+} // person{name:"Kate",age:21,pet:"rat"}
+
+// Для доступа используется точечная нотация
+p.name = "Dima"
+p.age = 24
+p.pet = "cat"
+fmt.Println(p.name) // "Dima"
+```
+28. ***Анонимные структуры*** – позволяют определить тип структуры прямо во время инициализации переменной:
+```go
+var p = struct {
+	name string
+	age int
+	pet string
+}{
+	name: "Dima",
+	age: 24,
+	pet: "cat",
+}
+
+var a = []struct {
+	value string
+}{
+	{ value: "1" },
+	{ value: "2" },
+}
+```
+29. Сравнение структур:
+	1. Если все значения структуры сравниваемые – то и сама структура сравнимаемая
+	2. Если есть хотя бы одно несравниваемое, например, слайс – то и сама структура несравниваемая
+30. В go НЕЛЬЗЯ СРАВНИВАТЬ ЗНАЧЕНИЯ РАЗНЫХ ТИПОВ, поэтому даже если есть две одинаковые структуры, то напрямую значения сравнить нельзя. Для сравнения нужно **преобразовать** один тип в другой, **если у типов идентичные названия полей, их значения, а так же порядок**:
+```go
+type firstPerson struct {
+	firstName string
+	lastName string
+}
+
+type secondPerson struct {
+	firstName string
+	lastName string
+}
+
+type thirdPerson struct {
+	firstName string
+	lastName string
+	age int
+}
+
+type fourthPerson struct {
+	lastName string
+	firstName string
+}
+
+var p1 = firstPerson {
+	firstName: "Dima",
+	lastName: "Fominenkov",
+}
+
+var p2 = secondPerson {
+	firstName: "Dima",
+	lastName: "Fominenkov",
+}
+
+var p3 = thirdPerson {
+	firstName: "Dima",
+	lastName: "Fominenkov",
+	age: 24,
+}
+
+var p4 = fourthPerson {
+	lastName: "Fominenkov",
+	firstName: "Dima",
+}
+
+fmt.Println(p1 == p2) // invalid operation: p1 == p2 (mismatched types firstPerson and secondPerson)
+fmt.Println(p1 == firstPerson(p2)) // true
+fmt.Println(p1 == firstPerson(p3)) // cannot convert p3 (variable of type thirdPerson) to type firstPerson
+fmt.Println(p1 == firstPerson(p4)) // cannot convert p4 (variable of type fourthPerson) to type firstPerson
+
+// ❗Анонимные структуры можно сравнивать без преобразования, если типы структур одинаковые❗
+var p1_2 = firstPerson {
+	firstName: "Dima",
+	lastName: "Fominenkov",
+}
+var anonim_p = struct {
+	firstName string
+	lastName string
+}{
+	firstName: "Dima",
+	lastName: "Fominenkov",
+}
+fmt.Println(p1_2 == anonim_p) // true – можно без явного преобразования значения анонимной стуктуры
+
+var anonim_p2 = struct {
+	lastName string
+	firstName string
+}{
+	lastName: "Fominenkov",
+	firstName: "Dima",
+}
+fmt.Println(p1_2 == anonim_p) // invalid operation: p1 == anonim_p2 (mismatched types firstPerson and struct{lastName string; firstName string})
+```
