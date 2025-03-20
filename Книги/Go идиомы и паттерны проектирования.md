@@ -853,4 +853,37 @@ skip
 }
 ```
 ## 5. Функции
-фыв
+1. Объявление функций:
+```go
+// func – ключевое слово
+// div – название функции
+// (...) – скобки, в которых могут быть, а могут и не быть параметры функции
+// numerator int, denominator int – параметры через запятую, у каждого его тип
+// ) int { – тип возвразаемого значения, может быть не указан, если функция ничего не возвращает, если указан обязательно должен быть return в функции
+func div(numerator int, denominator int) int {
+	if denominator == 0 {
+		return 0
+	}
+
+	return numerator / denominator
+}
+
+var names = []string{"Dima", "Katya", "Alexandr"}
+// функция ничего не принимает и не возвращает
+func main() {
+	for _, name := range names {
+		if len(name) > 5 {
+			fmt.Println("Name is too long. Quit from the program")
+			return // даже если функция ничего не вохвращает можем указать return для преждевременного выхода из функции
+		}
+	}
+
+	fmt.Println("All names are right")
+}
+
+// если есть несколько параметров одинакового типа друг за другом – можем указать тип только у последнего
+// num1, num2, num3 – все они имеют тип int
+func calc(num1, num2, num3 int, operator string) int {
+	...
+}
+```

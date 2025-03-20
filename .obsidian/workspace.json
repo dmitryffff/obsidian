@@ -40,7 +40,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -171,6 +172,7 @@
   },
   "active": "c6ee9bd5c5426fd0",
   "lastOpenFiles": [
+    "Ежедневник/14-02-2025.md",
     "Ежедневник/09-02-2025.md",
     "Книги/Go идиомы и паттерны проектирования.md",
     "Ежедневник/29-01-2025.md",
@@ -197,7 +199,6 @@
     "Ежедневник/17-08-2024.md",
     "Ежедневник/16-11-2024.md",
     "Ежедневник/15-09-2024.md",
-    "Ежедневник/12-11-2024.md",
     "Ежедневник",
     "_templates",
     "_assets/Число с плавающей запятой.png",
